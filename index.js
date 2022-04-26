@@ -7,6 +7,7 @@ const app = express();
 
 const allNotes = require('./db/notes.json');
 
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
@@ -26,4 +27,3 @@ app.get('/notes', (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
 });
-
